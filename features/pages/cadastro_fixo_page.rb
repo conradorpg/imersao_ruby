@@ -37,9 +37,9 @@ class RegisterPage < SitePrism::Page
 
   def fill_personal_info
     form_select_gender.set true
-    form_fill_fistname.set 'Deep'
-    form_fill_lastname.set 'Purple'
-    form_fill_email.set 'iron_maiden@gmail.com'
+    form_fill_fistname.set 'Iron'
+    form_fill_lastname.set 'Maiden Tree'
+    form_fill_email.set 'iron_maiden_3@gmail.com'
     form_fill_password.set 'ecitcarp@1035!'
     # form_fill_div_days.click
     form_fill_days.click
