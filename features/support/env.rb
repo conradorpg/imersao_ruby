@@ -2,6 +2,7 @@
 
 require 'capybara/cucumber'
 require 'cucumber'
+require 'faker'
 require 'pry'
 require 'report_builder'
 require 'rubocop'

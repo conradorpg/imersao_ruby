@@ -31,16 +31,19 @@ class RegisterPage < SitePrism::Page
 
   # rubocop:disable Metrics/AbcSize
   def create_account(email)
-    email_create_account_field.set email
+    @email = email.eql?('email') ? Faker::Internet.email(domain: 'mail') : email
+    email_create_account_field.set @email
     email_create_account_button.click
   end
 
   def fill_personal_info
+    $first_name = Faker::Name.first_name
+    $last_name = Faker::Name.last_name
     form_select_gender.set true
-    form_fill_fistname.set 'Iron'
-    form_fill_lastname.set 'Maiden Tree'
-    form_fill_email.set 'iron_maiden_3@gmail.com'
-    form_fill_password.set 'ecitcarp@1035!'
+    form_fill_fistname.set $first_name
+    form_fill_lastname.set $last_name
+    # form_fill_email.set @email
+    form_fill_password.set Faker::Internet.password(min_length: 5, max_length: 8, mix_case: true, special_characters: true)
     # form_fill_div_days.click
     form_fill_days.click
     form_fill_months.click
@@ -69,5 +72,10 @@ class RegisterPage < SitePrism::Page
   def submit_account
     form_submit_account.click
   end
+
+  def account_full_name
+    "#{$first_name} #{$last_name}"
+  end
+
   # rubocop:enable Metrics/AbcSize
 end

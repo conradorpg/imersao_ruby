@@ -16,7 +16,8 @@ Quando('confirmo o cadastro') do
   @app.register_page.submit_account
 end
 
-Entao('deve ser exibida a pagina da minha conta {string}') do |name|
+Entao('deve ser exibida a pagina da minha conta') do
   # have_text(name)
-  expect(@app.account_page.account_name.text).to eq(name)
+  # expect(@app.account_page.account_name.text).to eq(name)
+  expect(@app.account_page.account_name.text).to eq(@app.register_page.account_full_name)
 end
