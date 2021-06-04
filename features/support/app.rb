@@ -7,4 +7,8 @@ class App
   def account_page
     MyAccountPage.new
   end
+
+  def wishlist_page
+    WishListPage.new
+  end
 end

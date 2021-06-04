@@ -1,11 +1,11 @@
 # Classe responsavel pelo cadastro
 class RegisterPage < SitePrism::Page
   set_url '?controller=authentication&back=my-account'
-  element :email_create_account_field,  '#email_create'
+  element :email_create_account_field, '#email_create'
   element :email_create_account_button, '#SubmitCreate'
-  element :form_select_gender,  '#uniform-id_gender1'
-  element :form_fill_fistname,  '#customer_firstname'
-  element :form_fill_lastname,  '#customer_lastname'
+  element :form_select_gender, '#uniform-id_gender1'
+  element :form_fill_fistname, '#customer_firstname'
+  element :form_fill_lastname, '#customer_lastname'
   element :form_fill_email, '#email'
   element :form_fill_password, '#passwd'
   element :form_fill_div_days, '#uniform-days'
@@ -76,6 +76,5 @@ class RegisterPage < SitePrism::Page
   def account_full_name
     "#{$first_name} #{$last_name}"
   end
-
   # rubocop:enable Metrics/AbcSize
 end
