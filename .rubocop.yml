@@ -14,4 +14,10 @@ Metrics/MethodLength:
   Max: 25
 
 Layout/LineLength:
-  Max: 200
+  Max: 400
+
+Metrics/ParameterLists:
+  Max: 25
+
+Style/IfUnlessModifier:
+  Enabled: false

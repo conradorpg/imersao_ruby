@@ -7,9 +7,7 @@ Dado('solicito um novo cadastro para o email {string}') do |email|
 end
 
 Dado('preencho os campos do formulário com dados válidos') do
-  @app.register_page.fill_personal_info
-  @app.register_page.fill_address
-  @app.register_page.fill_phones
+  @app.register_page.fill_personal_info_fake
 end
 
 Quando('confirmo o cadastro') do
