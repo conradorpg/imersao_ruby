@@ -3,7 +3,8 @@ class RegisterPage < SitePrism::Page
   set_url '?controller=authentication&back=my-account'
   element :email_create_account_field, '#email_create'
   element :email_create_account_button, '#SubmitCreate'
-  element :form_select_gender, '#uniform-id_gender1'
+  element :form_select_gender_male, '#uniform-id_gender1'
+  element :form_select_gender_female, '#uniform-id_gender2'
   element :form_fill_fistname, '#customer_firstname'
   element :form_fill_lastname, '#customer_lastname'
   element :form_fill_email, '#email'
@@ -36,10 +37,10 @@ class RegisterPage < SitePrism::Page
     email_create_account_button.click
   end
 
-  def fill_personal_info
+  def fill_personal_info_fake
     $first_name = Faker::Name.first_name
     $last_name = Faker::Name.last_name
-    form_select_gender.set true
+    form_select_gender_male.set true
     form_fill_fistname.set $first_name
     form_fill_lastname.set $last_name
     # form_fill_email.set @email
@@ -49,9 +50,6 @@ class RegisterPage < SitePrism::Page
     form_fill_months.click
     form_fill_years.click
     form_fill_newsletter.click
-  end
-
-  def fill_address
     form_fill_address1.set 'Valley of Flowers'
     form_fill_address2.set 'House'
     form_fill_city.set 'Houston'
@@ -61,11 +59,37 @@ class RegisterPage < SitePrism::Page
     form_fill_div_country.click
     form_fill_country.click
     form_fill_other.set 'Imersão em Ruby'
-  end
-
-  def fill_phones
     form_fill_phone.set '+1 408 555 5555'
     form_fill_mobile.set '+1 408 555 5555'
+    form_fill_alias.set 'Led'
+  end
+
+  def fill_personal_info_examples(gender, first_name, last_name, passswd, newsletter, address, address_type, city, zipcode, phone, mobile)
+    $first_name = first_name
+    $last_name = last_name
+    gender.eql?('masc') ? form_select_gender_male.set(true) : form_select_gender_female.set(true)
+    form_fill_fistname.set $first_name
+    form_fill_lastname.set $last_name
+    # form_fill_email.set @email
+    form_fill_password.set passswd
+    # form_fill_div_days.click
+    form_fill_days.click
+    form_fill_months.click
+    form_fill_years.click
+    unless newsletter.eql?('no')
+      form_fill_newsletter.click
+    end
+    form_fill_address1.set address
+    form_fill_address2.set address_type
+    form_fill_city.set city
+    form_fill_div_state.click
+    form_fill_state.click
+    form_fill_zip_code.set zipcode
+    form_fill_div_country.click
+    form_fill_country.click
+    form_fill_other.set 'Imersão em Ruby'
+    form_fill_phone.set phone
+    form_fill_mobile.set mobile
     form_fill_alias.set 'Led'
   end
 
