@@ -13,6 +13,9 @@ Style/Encoding:
 Metrics/MethodLength:
   Max: 25
 
+Metrics/ClassLength:
+  Max: 200
+
 Layout/LineLength:
   Max: 400
 
@@ -20,4 +23,7 @@ Metrics/ParameterLists:
   Max: 25
 
 Style/IfUnlessModifier:
+  Enabled: false
+
+Style/ConditionalAssignment:
   Enabled: false
