@@ -14,5 +14,5 @@ Esquema do Cenario: Cadastrar cliente com dados reais
 
 Exemplos:
 |email          |gender|first_name|last_name  |passswd |newsletter|address            |address_type|city         |zipcode |phone            |mobile           |
-|'bart@mail.com'|'masc'|'Bart'    |'Jo-Jo Jay'|'123456'|'no'      |'Street of Flowers'|'house'     |'Springfiled'|'01111'|'+1 408 444 4444'|'+1 408 444 4444'|
-|'lisa@mail.com'|'fem' |'Lisa'    |'Marie'    |'123456'|'yes'     |'Street of Flowers'|'house'     |'Springfiled'|'01111'|'+1 408 555 5555'|'+1 408 444 4444'|
+|'bart3@mail.com'|'masc'|'Bart'    |'Jo-Jo Jay'|'123456'|'no'      |'Street of Flowers'|'house'     |'Springfiled'|'01111'|'+1 408 444 4444'|'+1 408 444 4444'|
+|'lisa3@mail.com'|'fem' |'Lisa'    |'Marie'    |'123456'|'yes'     |'Street of Flowers'|'house'     |'Springfiled'|'01111'|'+1 408 555 5555'|'+1 408 444 4444'|
